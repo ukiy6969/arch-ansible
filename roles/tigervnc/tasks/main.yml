@@ -1,0 +1,5 @@
+---
+- name: Install package tigervnc
+  pacman:
+    name: tigervnc
+    state: present

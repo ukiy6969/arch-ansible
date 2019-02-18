@@ -1,0 +1,29 @@
+---
+- name: Install package noto-fonts
+  pacman:
+    name: ['noto-fonts', 'noto-fonts-cjk', 'noto-fonts-emoji']
+    state: present
+
+- name: Link noto-fonts-sans
+  file:
+    src: /etc/fonts/conf.avail/66-noto-sans.conf
+    dest: /etc/fonts/conf.d/66-noto-sans.conf
+    state: link
+
+- name: Link noto-fonts-serif
+  file:
+    src: /etc/fonts/conf.avail/66-noto-serif.conf
+    dest: /etc/fonts/conf.d/66-noto-serif.conf
+    state: link
+
+- name: Link noto-fonts-mono
+  file:
+    src: /etc/fonts/conf.avail/66-noto-mono.conf
+    dest: /etc/fonts/conf.d/66-noto-mono.conf
+    state: link
+
+- name: Link noto-fonts-cjk
+  file:
+    src: /etc/fonts/conf.avail/70-noto-cjk.conf 
+    dest: /etc/fonts/conf.d/70-noto-cjk.conf 
+    state: link

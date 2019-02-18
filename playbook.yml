@@ -1,0 +1,10 @@
+---
+- hosts: arch
+  become: yes
+  roles:
+    - { role: pacman }
+    - { role: fonts }
+    - { role: xorg }
+    - { role: tigervnc }
+    - { role: i3 }
+    - { role: firefox }

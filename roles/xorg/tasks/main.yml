@@ -1,0 +1,13 @@
+---
+- name: Install package xorg-server
+  pacman:
+    name: xorg-server
+    state: present
+- name: Install package xorg-twm
+  pacman:
+    name: xorg-twm
+    state: present
+- name: Install package xterm
+  pacman:
+    name: xterm
+    state: present
