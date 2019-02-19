@@ -1,5 +1,0 @@
----
-- name: Install package firefox
-  pacman:
-    name: firefox
-    state: present
