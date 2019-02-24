@@ -1,0 +1,6 @@
+---
+- name: Install package fcitx
+  pacman:
+    name: ['fcitx', 'fcitx-mozc', 'fcitx-configtool']
+    state: present
+

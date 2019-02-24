@@ -12,3 +12,4 @@
     - { role: i3 }
     - { role: firefox }
     - { role: terminator }
+    - { role: ime }
