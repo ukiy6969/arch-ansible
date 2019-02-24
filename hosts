@@ -1,7 +1,0 @@
-[arch]
-34.85.21.57 
-	
-
-[all:vars]
-ansible_ssh_user=ukiy
-ansible_ssh_private_key_file=~/.ssh/google_compute_engine
