@@ -4,6 +4,16 @@
     name: ['noto-fonts', 'noto-fonts-cjk', 'noto-fonts-emoji']
     state: present
 
+- name: Install package otf-source-han-code-jp
+  yay:
+    name: otf-source-han-code-jp
+    state: present
+
+- name: Install package powerline-fonts
+  pacman:
+    name: powerline-fonts
+    state: present
+
 - name: Link noto-fonts-sans
   file:
     src: /etc/fonts/conf.avail/66-noto-sans.conf

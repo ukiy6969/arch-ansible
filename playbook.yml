@@ -1,10 +1,14 @@
 ---
 - hosts: arch
   become: yes
+  vars_files:
+    - ./vars/user.yml
   roles:
     - { role: pacman }
     - { role: fonts }
+    - { role: shell }
     - { role: xorg }
     - { role: tigervnc }
     - { role: i3 }
     - { role: firefox }
+    - { role: terminator }

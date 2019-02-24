@@ -1,0 +1,69 @@
+---
+- name: Install Zsh
+  pacman:
+    name: ['zsh', 'zsh-completions']
+    state: present
+
+- name: Change Shell
+  user:
+    name: "{{ user.name }}"
+    shell: /bin/zsh
+    append: yes
+
+- name: Install Tools
+  pacman:
+    name:
+      - git
+      - binutils
+      - make
+      - base-devel
+      - htop
+      - tmux
+    state: present
+
+- name: Check is yay installed
+  shell: command -v yay >/dev/null 2>&1
+  register: is_yay_exist
+  ignore_errors: yes
+  changed_when: False
+
+- debug: msg="{{ is_yay_exist.rc }}" # it returns rc 1
+- debug: var=is_rvm_exist
+
+- name: Git clone Yay
+  git:
+    repo: "https://aur.archlinux.org/yay.git"
+    dest: "{{ user.home }}/.build/yay/"
+  become: yes
+  become_user: "{{ user.name }}"
+  when: is_yay_exist is failed
+
+- name: Build Yay
+  command: "makepkg -si --noconfirm"
+  args:
+    chdir: "{{ user.home }}/.build/yay"
+  become: yes
+  become_user: "{{ user.name }}"
+  when: is_yay_exist is failed
+
+- name: Install Dev tools
+  pacman:
+    name:
+      - nodejs
+    state: present
+
+- name: Install Dotfiles
+  git:
+    repo: "https://github.com/ukiy6969/dotfiles.git"
+    dest: "{{ user.home }}/dotfiles"
+  register: dotfiles_status
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: Link Dotfiles
+  command: "{{ user.shell}} install.sh"
+  args:
+    chdir: "{{ user.home }}/dotfiles"
+  become: yes
+  become_user: "{{ user.name }}"
+  when: "dotfiles_status.changed"

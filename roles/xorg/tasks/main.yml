@@ -11,3 +11,7 @@
   pacman:
     name: xterm
     state: present
+- name: Install Tools
+  pacman:
+    name: xorg-xev
+    state: present

@@ -3,3 +3,16 @@
   pacman:
     name: tigervnc
     state: present
+
+- name: Install package virtual gl
+  pacman:
+    name: virtualgl
+    state: present
+
+- name: Push Vnc config
+  copy:
+    src: .vnc/
+    dest: "/home/{{ user.name }}/.vnc/"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    mode: preserve
