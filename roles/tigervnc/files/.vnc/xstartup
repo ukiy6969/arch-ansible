@@ -25,4 +25,5 @@ fi
 #  exec sh /etc/X11/xinit/xinitrc
 #fi
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+LANG= source /etc/profile.d/locale.sh
 i3 &

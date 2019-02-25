@@ -19,4 +19,7 @@
     name:
       - xorg-apps
       - xsel
+      - lxappearance
+      - adapta-gtk-theme
+      - gtk-engine-murrine
     state: present
