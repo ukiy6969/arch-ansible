@@ -22,4 +22,5 @@
       - lxappearance
       - adapta-gtk-theme
       - gtk-engine-murrine
+      - archlinux-wallpaper
     state: present
