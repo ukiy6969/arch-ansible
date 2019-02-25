@@ -23,4 +23,5 @@
       - adapta-gtk-theme
       - gtk-engine-murrine
       - archlinux-wallpaper
+      - feh
     state: present

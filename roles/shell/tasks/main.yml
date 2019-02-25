@@ -94,6 +94,7 @@
   git:
     repo: "https://github.com/ukiy6969/dotfiles.git"
     dest: "{{ user.home }}/dotfiles"
+    force: yes
   register: dotfiles_status
   become: yes
   become_user: "{{ user.name }}"
