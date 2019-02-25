@@ -3,15 +3,20 @@
   pacman:
     name: xorg-server
     state: present
+
 - name: Install package xorg-twm
   pacman:
     name: xorg-twm
     state: present
+
 - name: Install package xterm
   pacman:
     name: xterm
     state: present
+
 - name: Install Tools
   pacman:
-    name: xorg-xev
+    name:
+      - xorg-apps
+      - xsel
     state: present

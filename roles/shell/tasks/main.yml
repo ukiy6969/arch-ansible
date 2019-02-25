@@ -10,6 +10,24 @@
     shell: /bin/zsh
     append: yes
 
+- name: Locale
+  lineinfile:
+    path: /etc/locale.gen
+    regexp: '^#({{ user.locale }}.*)'
+    line: '\1'
+    state: present
+    backrefs: yes
+
+- name: Locale Gen
+  locale_gen:
+    name: "{{ user.locale }}"
+    state: present
+
+- name: Set User Locale
+  copy:
+    dest: "{{ user.home }}/.config/locale.conf"
+    content: "LANG={{ user.locale }}"
+
 - name: Install Tools
   pacman:
     name:
@@ -19,6 +37,8 @@
       - base-devel
       - htop
       - tmux
+      - python-pip
+      - python2-pip
     state: present
 
 - name: Check is yay installed
@@ -52,6 +72,24 @@
       - nodejs
     state: present
 
+- name: Install Neovim
+  yay:
+    name:
+      - neovim
+      - python2-neovim
+      - python-neovim
+      - ruby-neovim
+      - nodejs-neovim
+    state: present
+
+- name: Install Ensime requirements
+  pip:
+    name:
+      - websocket-client
+      - sexpdata
+    executable: pip2
+    state: present
+
 - name: Install Dotfiles
   git:
     repo: "https://github.com/ukiy6969/dotfiles.git"
@@ -67,3 +105,8 @@
   become: yes
   become_user: "{{ user.name }}"
   when: "dotfiles_status.changed"
+
+- name: Scala tools
+  pacman:
+    name: sbt
+    state: present

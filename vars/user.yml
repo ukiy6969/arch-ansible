@@ -3,3 +3,4 @@ user:
   group: ukiy
   shell: /bin/zsh
   home: /home/ukiy/
+  locale: ja_JP.UTF-8
