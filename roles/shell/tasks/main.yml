@@ -10,6 +10,13 @@
     shell: /bin/zsh
     append: yes
 
+- name: Creates Config directory
+  file:
+    path: "{{ user.home }}/.config"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    state: directory
+
 - name: Locale
   lineinfile:
     path: /etc/locale.gen
@@ -47,7 +54,9 @@
   ignore_errors: yes
   changed_when: False
 
-- debug: msg="{{ is_yay_exist.rc }}" # it returns rc 1
+- debug:
+    msg: "{{ is_yay_exist.rc }}"
+
 - debug: var=is_rvm_exist
 
 - name: Git clone Yay

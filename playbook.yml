@@ -5,8 +5,8 @@
     - ./vars/user.yml
   roles:
     - { role: pacman }
-    - { role: fonts }
     - { role: shell }
+    - { role: fonts }
     - { role: xorg }
     - { role: tigervnc }
     - { role: i3 }
