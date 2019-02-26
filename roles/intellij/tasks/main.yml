@@ -1,0 +1,5 @@
+---
+- name: Install package intellij
+  pacman:
+    name: intellij-idea-community-edition
+    state: present
