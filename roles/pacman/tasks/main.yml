@@ -1,3 +1,9 @@
+---
+- name: Install pacman-contrib
+  pacman:
+    name: pacman-contrib
+    state: present
+
 - name: full system upgrade
   pacman:
     update_cache: yes
