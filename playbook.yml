@@ -5,12 +5,14 @@
     - ./vars/user.yml
   roles:
     - { role: pacman }
+    - { role: system }
     - { role: shell }
     - { role: fonts }
     - { role: xorg }
     - { role: tigervnc }
     - { role: i3 }
     - { role: firefox }
+    - { role: chrome }
     - { role: terminator }
     - { role: ime }
     - { role: intellij }
