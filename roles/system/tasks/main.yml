@@ -1,0 +1,7 @@
+---
+- name: Install System package
+  pacman:
+    name:
+      - sysstat
+      - acpi
+    state: present
