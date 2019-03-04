@@ -1,0 +1,7 @@
+---
+- name: Install package chrome
+  yay:
+    name:
+      - google-chrome
+      - chrome-remote-desktop
+    state: present
