@@ -6,6 +6,7 @@
   roles:
     - { role: pacman }
     - { role: system }
+    - { role: mount }
     - { role: shell }
     - { role: fonts }
     - { role: xorg }

@@ -1,0 +1,8 @@
+- name: Mount up device by UUID
+  mount:
+    path: /home
+    src: /dev/sdb
+    fstype: ext4
+    opts: discard,defaults,nofail 
+    passno: 2
+    state: present
