@@ -12,7 +12,24 @@
 - name: Push Vnc config
   copy:
     src: .vnc/
-    dest: "/home/{{ user.name }}/.vnc/"
+    dest: "{{ user.home }}/.vnc/"
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
     mode: preserve
+
+- name: install pexpect
+  pip:
+    name: pexpect
+    state: present
+  become: yes
+
+- name: Run Vnc Server
+  expect:
+    command: "vncserver"
+    creates: "{{ user.home }}/.vnc/passwd"
+    responses:
+      (?i)Password: "{{ vnc_password }}"
+      (?i)Verify: "{{ vnc_password }}"
+      (?i)Would you like to enter a view-only password (y/n)? : n
+  become: yes
+  become_user: "{{ user.name }}"
