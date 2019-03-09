@@ -23,7 +23,7 @@
     state: present
   become: yes
 
-- name: Run Vnc Server
+- name: Config Password
   expect:
     command: "vncserver"
     creates: "{{ user.home }}/.vnc/passwd"
@@ -33,3 +33,13 @@
       (?i)Would you like to enter a view-only password (y/n)? : n
   become: yes
   become_user: "{{ user.name }}"
+
+- name: Make sure a service is running
+  systemd:
+    state: started
+    name: vncserver@:1
+    enabled: yes
+    scope: user
+  become: yes
+  become_user: "{{ user.name }}"
+
