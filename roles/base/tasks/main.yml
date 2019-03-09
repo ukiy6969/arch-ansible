@@ -10,13 +10,6 @@
     shell: /bin/zsh
     append: yes
 
-- name: Creates Config directory
-  file:
-    path: "{{ user.home }}/.config"
-    owner: "{{ user.name }}"
-    group: "{{ user.group }}"
-    state: directory
-
 - include: locale.yml
 
 - name: Install Tools
