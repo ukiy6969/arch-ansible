@@ -6,3 +6,7 @@ user:
   locale: ja_JP.UTF-8
 
 timezone: Asia/Tokyo
+
+pacman:
+  default:
+    mirror: https://jpn.mirror.pkgbuild.com/$repo/os/$arch
