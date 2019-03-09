@@ -129,3 +129,9 @@ dmypy.json
 
 # hosts
 hosts
+
+# keys
+keys
+
+# .gcp.yml
+archlinux.gcp.yml
