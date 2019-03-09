@@ -1,0 +1,17 @@
+---
+- name: Install Neovim
+  yay:
+    name:
+      - neovim
+      - python2-neovim
+      - python-neovim
+      - ruby-neovim
+      - nodejs-neovim
+    state: present
+
+- name: Install Ensime requirements
+  pip:
+    name:
+      - websocket-client
+      - sexpdata
+    state: present

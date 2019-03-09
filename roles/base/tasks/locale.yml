@@ -1,0 +1,24 @@
+---
+- name: Locale
+  lineinfile:
+    path: /etc/locale.gen
+    regexp: '^#({{ user.locale }}.*)'
+    line: '\1'
+    state: present
+    backrefs: yes
+
+- name: Locale Gen
+  locale_gen:
+    name: "{{ user.locale }}"
+    state: present
+
+- name: Set User Locale
+  copy:
+    dest: "{{ user.home }}/.config/locale.conf"
+    content: "LANG={{ user.locale }}"
+
+- name: Set TimeZone
+  file:
+    src: "/usr/share/zoneinfo/{{ timezone }}"
+    dest: /etc/localtime
+    state: link

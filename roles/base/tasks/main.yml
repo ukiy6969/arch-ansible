@@ -1,0 +1,50 @@
+---
+- name: Install Zsh
+  pacman:
+    name: ['zsh', 'zsh-completions']
+    state: present
+
+- name: Change Shell
+  user:
+    name: "{{ user.name }}"
+    shell: /bin/zsh
+    append: yes
+
+- name: Creates Config directory
+  file:
+    path: "{{ user.home }}/.config"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    state: directory
+
+- include: locale.yml
+
+- name: Install Tools
+  pacman:
+    name:
+      - git
+      - binutils
+      - make
+      - base-devel
+      - htop
+      - tmux
+      - python-pip
+      - python2-pip
+    state: present
+
+- include: yay.yml
+
+- name: Install Dev tools
+  pacman:
+    name:
+      - nodejs
+    state: present
+
+- include: neovim.yml
+
+- include: dotfiles.yml
+
+- name: Scala tools
+  pacman:
+    name: sbt
+    state: present

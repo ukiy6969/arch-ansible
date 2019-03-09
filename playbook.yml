@@ -7,7 +7,7 @@
     - { role: pacman }
     - { role: system }
     - { role: mount }
-    - { role: shell }
+    - { role: base }
     - { role: fonts }
     - { role: xorg }
     - { role: tigervnc }
