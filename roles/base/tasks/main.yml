@@ -14,15 +14,7 @@
 
 - name: Install Tools
   pacman:
-    name:
-      - git
-      - binutils
-      - make
-      - base-devel
-      - htop
-      - tmux
-      - python-pip
-      - python2-pip
+    name: "{{ base_packages }}"
     state: present
 
 - include: yay.yml

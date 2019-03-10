@@ -10,3 +10,14 @@ timezone: Asia/Tokyo
 pacman:
   default:
     mirror: https://jpn.mirror.pkgbuild.com/$repo/os/$arch
+
+base_packages:
+  - git
+  - binutils
+  - make
+  - base-devel
+  - htop
+  - tmux
+  - python-pip
+  - python2-pip
+  - wget
