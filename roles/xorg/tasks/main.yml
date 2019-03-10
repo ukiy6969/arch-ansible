@@ -24,4 +24,5 @@
       - gtk-engine-murrine
       - archlinux-wallpaper
       - feh
+      - mesa-demos
     state: present
