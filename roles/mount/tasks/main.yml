@@ -1,3 +1,4 @@
+---
 - name: Mount up device by UUID
   mount:
     path: /home
