@@ -15,6 +15,7 @@
     - { role: terminator }
     - { role: ime }
     - { role: intellij }
+    - { role: vscode }
   vars_prompt:
     - name: vnc_password
       prompt: "Enter desired vnc password"
