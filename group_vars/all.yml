@@ -21,3 +21,4 @@ base_packages:
   - python-pip
   - python2-pip
   - wget
+  - clang
