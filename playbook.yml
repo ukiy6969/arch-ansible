@@ -4,19 +4,20 @@
   roles:
     - { role: pacman }
     - { role: system }
-    - { role: mount }
+    # - { role: mount }
     - { role: base }
     - { role: fonts }
     - { role: xorg }
-    - { role: tigervnc }
+      #- { role: tigervnc }
     - { role: i3 }
     - { role: firefox }
     - { role: chrome }
     - { role: terminator }
     - { role: ime }
-    - { role: intellij }
-    - { role: vscode }
-  vars_prompt:
-    - name: vnc_password
-      prompt: "Enter desired vnc password"
-
+      #    - { role: intellij }
+      #    - { role: vscode }
+      #  vars_prompt:
+      #    - name: user_password
+      #      prompt: "Enter desired user password"
+      #    - name: vnc_password
+      #      prompt: "Enter desired vnc password"

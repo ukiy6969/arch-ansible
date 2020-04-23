@@ -1,11 +1,4 @@
 ---
-- name: Creates Config directory
-  file:
-    path: "{{ user.home }}/.config"
-    owner: "{{ user.name }}"
-    group: "{{ user.group }}"
-    state: directory
-
 - name: Install Dotfiles
   git:
     repo: "https://github.com/ukiy6969/dotfiles.git"

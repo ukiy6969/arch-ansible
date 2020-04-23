@@ -1,13 +1,16 @@
 ---
 - name: Install Neovim
-  yay:
-    name:
+  command:
+    argv:
+      - yay
+      - -S
+      - --noconfirm
       - neovim
       - python2-neovim
       - python-neovim
       - ruby-neovim
       - nodejs-neovim
-    state: present
+  become_user: "{{ user.name }}"
 
 - name: Install Ensime requirements
   pip:

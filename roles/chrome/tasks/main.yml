@@ -1,7 +1,10 @@
 ---
 - name: Install package chrome
-  yay:
-    name:
+  command:
+    argv:
+      - yay
+      - -S
+      - --noconfirm
       - google-chrome
       - chrome-remote-desktop
-    state: present
+  become_user: "{{ user.name }}"

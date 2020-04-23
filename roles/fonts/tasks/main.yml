@@ -5,9 +5,14 @@
     state: present
 
 - name: Install package otf-source-han-code-jp
-  yay:
-    name: otf-source-han-code-jp
-    state: present
+  command:
+    argv:
+    - yay
+    - -S
+    - --noconfirm
+    -  otf-source-han-code-jp
+  become: yes
+  become_user: "{{ user.name }}"
 
 - name: Install package powerline-fonts
   pacman:

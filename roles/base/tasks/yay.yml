@@ -9,7 +9,6 @@
   git:
     repo: "https://aur.archlinux.org/yay.git"
     dest: "{{ user.home }}/.build/yay/"
-  become: yes
   become_user: "{{ user.name }}"
   when: is_yay_exist is failed
 
@@ -17,6 +16,7 @@
   command: "makepkg -si --noconfirm"
   args:
     chdir: "{{ user.home }}/.build/yay"
-  become: yes
+    stdin: "{{ user_password }}"
+    stdin_add_newline: yes
   become_user: "{{ user.name }}"
   when: is_yay_exist is failed

@@ -17,6 +17,7 @@
 - name: Install Tools
   pacman:
     name:
+      - xorg-xinit
       - xorg-apps
       - xsel
       - lxappearance
