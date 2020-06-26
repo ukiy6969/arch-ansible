@@ -1,31 +1,4 @@
 ---
-- name: Install Zsh
-  pacman:
-    name: ['zsh', 'zsh-completions']
-    state: present
-
-
-- name: Change Shell
-  user:
-    name: "{{ user.name }}"
-    shell: /bin/zsh
-    append: yes
-
-- name: Creates Config directory
-  file:
-    path: "{{ user.home }}/.config"
-    owner: "{{ user.name }}"
-    group: "{{ user.group }}"
-    state: directory
-
-- name: Set Sudo No password
-  lineinfile:
-    path: /etc/sudoers.d/11-install-aur_builder
-    state: present
-    line: "{{ user.name }} ALL=(ALL) NOPASSWD: /usr/bin/pacman"
-    create: yes
-    validate: 'visudo -cf %s'
-
 - include: locale.yml
 
 - name: Install Tools
@@ -33,7 +6,9 @@
     name: "{{ base_packages }}"
     state: present
 
-- include: yay.yml
+- include: user.yml
+
+- include: aur.yml
 
 - name: Install Dev tools
   pacman:

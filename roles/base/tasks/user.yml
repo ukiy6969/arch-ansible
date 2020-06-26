@@ -1,0 +1,31 @@
+---
+- name: Install Zsh
+  pacman:
+    name: ['zsh', 'zsh-completions']
+    state: present
+
+- name: Change Shell
+  user:
+    name: "{{ user.name }}"
+    shell: /bin/zsh
+    append: yes
+
+- name: Creates Config directory
+  file:
+    path: "{{ user.home }}/.config"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    state: directory
+
+- name: Set User Locale
+  copy:
+    dest: "{{ user.home }}/.config/locale.conf"
+    content: "LANG={{ user.locale }}"
+
+- name: Set Sudo No password User
+  lineinfile:
+    path: /etc/sudoers.d/12-user
+    state: present
+    line: "{{ user.name }} ALL=(ALL) NOPASSWD: ALL"
+    create: yes
+    validate: 'visudo -cf %s'

@@ -1,23 +1,25 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
   become: yes
   roles:
+    - kewlfft.aur
     - { role: pacman }
-    - { role: system }
+    # - { role: system }
     # - { role: mount }
     - { role: base }
-    - { role: fonts }
-    - { role: xorg }
+    # - { role: fonts }
+    # - { role: xorg }
       #- { role: tigervnc }
-    - { role: i3 }
-    - { role: firefox }
-    - { role: chrome }
-    - { role: terminator }
-    - { role: ime }
+    # - { role: i3 }
+    # - { role: firefox }
+    # - { role: chrome }
+    # - { role: terminator }
+    # - { role: ime }
       #    - { role: intellij }
       #    - { role: vscode }
-      #  vars_prompt:
-      #    - name: user_password
-      #      prompt: "Enter desired user password"
-      #    - name: vnc_password
-      #      prompt: "Enter desired vnc password"
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"
+        #  - name: vnc_password
+        #    prompt: "Enter desired vnc password"

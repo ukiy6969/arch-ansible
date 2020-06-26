@@ -1,10 +1,9 @@
 ---
 - name: Install package chrome
-  command:
-    argv:
-      - yay
-      - -S
-      - --noconfirm
+  aur:
+    name:
       - google-chrome
       - chrome-remote-desktop
-  become_user: "{{ user.name }}"
+    state: present
+  become: yes
+  become_user: aur_builder 

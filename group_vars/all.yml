@@ -15,10 +15,12 @@ base_packages:
   - git
   - binutils
   - make
-  - base-devel
   - htop
   - tmux
   - python-pip
   - python2-pip
   - wget
   - clang
+  - openssh
+  - neovim
+  - python-pynvim
