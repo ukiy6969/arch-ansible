@@ -1,15 +1,4 @@
 ---
-- name: Install Zsh
-  pacman:
-    name: ['zsh', 'zsh-completions']
-    state: present
-
-- name: Change Shell
-  user:
-    name: "{{ user.name }}"
-    shell: /bin/zsh
-    append: yes
-
 - include: locale.yml
 
 - name: Install Tools
@@ -17,7 +6,9 @@
     name: "{{ base_packages }}"
     state: present
 
-- include: yay.yml
+- include: user.yml
+
+- include: aur.yml
 
 - name: Install Dev tools
   pacman:

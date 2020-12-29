@@ -1,0 +1,6 @@
+[local]
+localhost
+[local:vars]
+ansible_port = 6969
+ansible_user = root
+ansible_ssh_pass=ukiy

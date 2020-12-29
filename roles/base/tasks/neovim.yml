@@ -1,13 +1,20 @@
 ---
 - name: Install Neovim
-  yay:
+  pacman:
     name:
       - neovim
-      - python2-neovim
-      - python-neovim
+      - python-pynvim
+    state: present
+
+- name: Install Neovim
+  aur:
+    name:
+      - python2-pynvim
       - ruby-neovim
       - nodejs-neovim
     state: present
+  become: yes
+  become_user: aur_builder 
 
 - name: Install Ensime requirements
   pip:

@@ -1,6 +1,12 @@
 ---
 - name: Install package fcitx
   pacman:
-    name: ['fcitx', 'fcitx-mozc', 'fcitx-configtool', 'fcitx-gtk2', 'fcitx-gtk3', 'fcitx-qt4', 'fcitx-qt5']
+    name:
+    - 'fcitx'
+    - 'fcitx-mozc'
+    - 'fcitx-configtool'
+    - 'fcitx-gtk2'
+    - 'fcitx-gtk3'
+    - 'fcitx-qt5'
     state: present
 
