@@ -9,7 +9,7 @@ timezone: Asia/Tokyo
 
 pacman:
   default:
-    mirror: https://jpn.mirror.pkgbuild.com/$repo/os/$arch
+    mirror: http://ftp.jaist.ac.jp/$repo/os/$arch
 
 base_packages:
   - git
