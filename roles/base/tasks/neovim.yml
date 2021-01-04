@@ -9,7 +9,6 @@
 - name: Install Neovim
   aur:
     name:
-      - python2-pynvim
       - ruby-neovim
       - nodejs-neovim
     state: present

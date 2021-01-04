@@ -18,7 +18,6 @@ base_packages:
   - htop
   - tmux
   - python-pip
-  - python2-pip
   - wget
   - clang
   - openssh
