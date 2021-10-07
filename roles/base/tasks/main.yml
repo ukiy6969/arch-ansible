@@ -20,6 +20,8 @@
 
 - include: dotfiles.yml
 
+- include: ssh.yml
+
 - name: Scala tools
   pacman:
     name: sbt

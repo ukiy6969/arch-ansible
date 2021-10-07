@@ -15,7 +15,3 @@
   become: yes
   become_user: "{{ user.name }}"
   when: "dotfiles_status.changed"
-
-- name: Generate an OpenSSH keypair
-  community.crypto.openssh_keypair:
-    path: "/{{ user.home }}/.ssh/id_ssh_rsa"

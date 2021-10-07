@@ -1,0 +1,11 @@
+- name: Make SSH Directory
+  file:
+    path: "{{ user.home }}/.ssh"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    mode: "600"
+    state: directory
+
+- name: Generate an OpenSSH keypair
+  community.crypto.openssh_keypair:
+    path: "/{{ user.home }}/.ssh/id_ssh_rsa"
