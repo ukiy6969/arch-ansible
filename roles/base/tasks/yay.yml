@@ -10,7 +10,7 @@
 - name: Build Yay
   command: makepkg -si
   become: yes
-  become_user: aur_builder 
+  become_user: "{{ user.name }}"
   args:
-    chdir: "{{ user.home }}/yay"
+    chdir: "{{ user.home }}yay"
   register: yayoutput
