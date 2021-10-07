@@ -1,6 +1,6 @@
 ---
 - name: Install package chrome
-  aur:
+  kewlfft.aur.aur:
     name:
       - google-chrome
       - chrome-remote-desktop

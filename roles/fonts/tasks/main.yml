@@ -5,7 +5,7 @@
     state: present
 
 - name: Install package otf-source-han-code-jp
-  aur:
+  kewlfft.aur.aur:
     name:
       - otf-source-han-code-jp
     state: present
