@@ -1,7 +1,7 @@
 ---
 - name: Download Yay
   git:
-    repo: "https://github.com/ukiy6969/dotfiles.git"
+    repo: "https://aur.archlinux.org/yay.git"
     dest: "{{ user.home }}/yay"
     force: yes
   become: yes
