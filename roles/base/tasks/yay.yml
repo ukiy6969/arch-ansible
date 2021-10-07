@@ -1,0 +1,16 @@
+---
+- name: Download Yay
+  git:
+    repo: "https://github.com/ukiy6969/dotfiles.git"
+    dest: "{{ user.home }}/yay"
+    force: yes
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: Build Yay
+  command: makepkg -si
+  become: yes
+  become_user: aur_builder 
+  args:
+    chdir: "{{ user.home }}/yay"
+  register: yayoutput

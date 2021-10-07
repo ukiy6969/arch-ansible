@@ -1,3 +1,4 @@
+---
 - name: Make SSH Directory
   file:
     path: "{{ user.home }}/.ssh"
