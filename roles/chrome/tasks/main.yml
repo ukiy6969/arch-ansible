@@ -8,7 +8,6 @@
   become: yes
   become_user: aur_builder 
 
----
 - name: Copy Google Chrome Config
   template:
     src: chrome-flags.conf
