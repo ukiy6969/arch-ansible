@@ -8,7 +8,7 @@
   become_user: "{{ user.name }}"
 
 - name: Build Yay
-  command: makepkg -si
+  command: makepkg -si --noconfirm
   become: yes
   become_user: "{{ user.name }}"
   args:
