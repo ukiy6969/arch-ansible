@@ -2,11 +2,9 @@
 - name: Install package fcitx
   pacman:
     name:
-    - 'fcitx5'
-    - 'fcitx5-mozc'
-    - 'fcitx5-configtool'
-    - 'fcitx5-gtk'
-    - 'fcitx5-qt'
+    - 'fcitx'
+    - 'fcitx-mozc'
+    - 'fcitx-configtool'
     state: present
 
 - name: Set Input Method
