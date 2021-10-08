@@ -5,11 +5,3 @@
       - sysstat
       - acpi
     state: present
-
-- name: Set Input Method
-  blockinFile:
-    dest: /etc/environment
-    block: |
-      GTK_IM_MODULE=fcitx
-      QT_IM_MODULE=fcitx
-      XMODIFIERS=@im=fcitx
