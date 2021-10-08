@@ -6,4 +6,5 @@
     - { role: pacman }
     - { role: base }
     - { role: wsl }
+    - { role: fonts }
     - { role: chrome }
