@@ -5,4 +5,5 @@
   roles:
     - { role: pacman }
     - { role: base }
+    - { role: wsl }
     - { role: chrome }

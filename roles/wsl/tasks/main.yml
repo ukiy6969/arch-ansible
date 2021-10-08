@@ -1,0 +1,7 @@
+---
+- name: Install Genie Systemd
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - genie-systemd
+    state: present
