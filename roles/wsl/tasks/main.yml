@@ -5,6 +5,9 @@
     dest: /tmp/genie-systemd.pkg.tar.zst
 
 - name: Install Genie
-  pacman:
+  kewlfft.aur.aur:
+    use: yay
     name: /tmp/genie-systemd.pkg.tar.zst
     state: present
+  become: yes
+  become_user: aur_builder 
