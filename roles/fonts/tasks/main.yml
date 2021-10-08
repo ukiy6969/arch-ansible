@@ -18,44 +18,44 @@
     name: powerline-fonts
     state: present
 
-- name: Link noto-fonts-sans
-  file:
-    src: /etc/fonts/conf.avail/66-noto-sans.conf
-    dest: /etc/fonts/conf.d/66-noto-sans.conf
-    state: link
+# - name: Link noto-fonts-sans
+#   file:
+#     src: /etc/fonts/conf.avail/66-noto-sans.conf
+#     dest: /etc/fonts/conf.d/66-noto-sans.conf
+#     state: link
 
-- name: Link noto-fonts-serif
-  file:
-    src: /etc/fonts/conf.avail/66-noto-serif.conf
-    dest: /etc/fonts/conf.d/66-noto-serif.conf
-    state: link
+# - name: Link noto-fonts-serif
+#   file:
+#     src: /etc/fonts/conf.avail/66-noto-serif.conf
+#     dest: /etc/fonts/conf.d/66-noto-serif.conf
+#     state: link
 
-- name: Link noto-fonts-mono
-  file:
-    src: /etc/fonts/conf.avail/66-noto-mono.conf
-    dest: /etc/fonts/conf.d/66-noto-mono.conf
-    state: link
+# - name: Link noto-fonts-mono
+#   file:
+#     src: /etc/fonts/conf.avail/66-noto-mono.conf
+#     dest: /etc/fonts/conf.d/66-noto-mono.conf
+#     state: link
 
-- name: Link noto-fonts-cjk
-  file:
-    src: /etc/fonts/conf.avail/70-noto-cjk.conf 
-    dest: /etc/fonts/conf.d/70-noto-cjk.conf 
-    state: link
+# - name: Link noto-fonts-cjk
+#   file:
+#     src: /etc/fonts/conf.avail/70-noto-cjk.conf 
+#     dest: /etc/fonts/conf.d/70-noto-cjk.conf 
+#     state: link
 
-- name: Link no Bitmap
-  file:
-    src: /etc/fonts/conf.avail/70-no-bitmaps.conf
-    dest: /etc/fonts/conf.d/70-no-bitmaps.conf
-    state: link
+# - name: Link no Bitmap
+#   file:
+#     src: /etc/fonts/conf.avail/70-no-bitmaps.conf
+#     dest: /etc/fonts/conf.d/70-no-bitmaps.conf
+#     state: link
 
-- name: No Bitmap All
-  copy:
-    src: 20-no-embedded.conf
-    dest: /etc/fonts/conf.avail/20-no-embedded.conf
-    mode: preserve
+# - name: No Bitmap All
+#   copy:
+#     src: 20-no-embedded.conf
+#     dest: /etc/fonts/conf.avail/20-no-embedded.conf
+#     mode: preserve
 
-- name: Link No Bitmap All
-  file:
-    src: /etc/fonts/conf.avail/20-no-embedded.conf
-    dest: /etc/fonts/conf.d/20-no-embedded.conf
-    state: link
+# - name: Link No Bitmap All
+#   file:
+#     src: /etc/fonts/conf.avail/20-no-embedded.conf
+#     dest: /etc/fonts/conf.d/20-no-embedded.conf
+#     state: link
