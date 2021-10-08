@@ -13,8 +13,12 @@
   become: yes
   become_user: aur_builder 
 
-
 - name: Install Genie
   pacman:
     name: /tmp/genie-systemd.pkg.tar.zst
     state: present
+
+- name: Enable wslg-xwayland.socket
+  systemd:
+    name: wslg-xwayland.socket
+    enabled: yes
