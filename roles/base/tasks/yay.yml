@@ -8,10 +8,10 @@
   become_user: "{{ user.name }}"
 
 - name: Build Yay
-  command: makepkg -si --noconfirm
-  creates: /usr/bin/yay
+  command: 
+    cmd: makepkg -si --noconfirm
+    creates: /usr/bin/yay
+    chdir: "{{ user.home }}yay"
   become: yes
   become_user: "{{ user.name }}"
-  args:
-    chdir: "{{ user.home }}yay"
   register: yayoutput
