@@ -5,3 +5,5 @@
     name:
       - genie-systemd
     state: present
+  become: yes
+  become_user: aur_builder 
