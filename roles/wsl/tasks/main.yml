@@ -1,9 +1,10 @@
 ---
-- name: Install Genie Systemd
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - genie-systemd
+- name: Download Genie ZST
+  get_url:
+    url: https://github.com/arkane-systems/genie/releases/download/v1.44/genie-systemd-1.44-1-x86_64.pkg.tar.zst
+    dest: /tmp/genie-systemd.pkg.tar.zst
+
+- name: Install Genie
+  pacman:
+    name: /tmp/genie-systemd.pkg.tar.zst
     state: present
-  become: yes
-  become_user: aur_builder 
