@@ -7,5 +7,6 @@
     - { role: base }
     - { role: wsl }
     - { role: fonts }
+    - { role: i3 }
     - { role: chrome }
     - { role: ime }
