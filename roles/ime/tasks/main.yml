@@ -5,7 +5,4 @@
     - 'fcitx5'
     - 'fcitx5-mozc'
     - 'fcitx5-configtool'
-    - 'fcitx-gtk2'
-    - 'fcitx-gtk3'
-    - 'fcitx-qt5'
     state: present
