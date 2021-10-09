@@ -22,3 +22,14 @@
   systemd:
     name: wslg-xwayland.socket
     enabled: yes
+
+- name: WSL Config
+  blockinfile:
+    dest: '{{ user.home }}/.zshrc.local'
+    block: |
+      export QT_SCALE_FACTOR=2
+      export GDK_SCALE=2
+
+      if [[ ! -v INSIDE_GENIE ]]; then
+          exec /usr/bin/genie -s
+      fi
