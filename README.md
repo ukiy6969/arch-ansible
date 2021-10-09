@@ -55,6 +55,13 @@ Connect Vnc server.
 
     $ vncviewer localhost:5901
 
+## WSL Playbook
+
+
+```bash
+bash <(curl -s https://gist.githubusercontent.com/ukiy6969/a2ce83601ec6be4465f55179bc795f4a/raw/arch-install)
+```
+
 
 ## Licence
 
