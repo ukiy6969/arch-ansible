@@ -23,6 +23,13 @@
     name: wslg-xwayland.socket
     enabled: yes
 
+- name: Touch .zshrc.local
+  file:
+    path: '{{ user.home }}/.zshrc.local'
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    state: touch
+
 - name: WSL Config
   blockinfile:
     dest: '{{ user.home }}/.zshrc.local'
