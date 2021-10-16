@@ -25,3 +25,4 @@ base_packages:
   - python-pynvim
   - ripgrep
   - miniconda3
+  - traceroute
