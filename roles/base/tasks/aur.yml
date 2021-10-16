@@ -28,5 +28,5 @@
 - name: Install Aur Packages
   kewlfft.aur.aur:
     use: yay
-    name: "miniconda3"
+    name: "{{ aur_packages }}"
     state: present
