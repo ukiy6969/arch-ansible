@@ -7,3 +7,26 @@
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
     create: yes
     validate: 'visudo -cf %s'
+
+- name: Download Yay
+  git:
+    repo: "https://aur.archlinux.org/yay.git"
+    dest: "{{ user.home }}/yay"
+    force: yes
+  become: yes
+  become_user: "{{ user.name }}"
+
+- name: Build Yay
+  command: 
+    cmd: makepkg -si --noconfirm
+    creates: /usr/bin/yay
+    chdir: "{{ user.home }}yay"
+  become: yes
+  become_user: "{{ user.name }}"
+  register: yayoutput
+
+- name: Install Aur Packages
+  kewlfft.aur.aur:
+    use: yay
+    name: "{{ aur_packages }}"
+    state: present
