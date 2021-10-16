@@ -28,5 +28,6 @@
 - name: Install Aur Packages
   kewlfft.aur.aur:
     use: yay
-    name: "{{ aur_packages }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ aur_packages }}"
