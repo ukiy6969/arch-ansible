@@ -26,5 +26,4 @@ base_packages:
   - ripgrep
   - traceroute
 
-aur_packages:
-  - miniconda3
+aur_packages: []
