@@ -22,8 +22,6 @@
 
 - include: ssh.yml
 
-- include: yay.yml
-
 - name: Scala tools
   pacman:
     name: sbt
