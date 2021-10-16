@@ -24,4 +24,4 @@ base_packages:
   - neovim
   - python-pynvim
   - ripgrep
-  - traceroute
+  - miniconda3
