@@ -10,3 +10,5 @@
 - name: Generate an OpenSSH keypair
   community.crypto.openssh_keypair:
     path: "/{{ user.home }}/.ssh/id_ssh_rsa"
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
