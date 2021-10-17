@@ -27,5 +27,6 @@ base_packages:
   - traceroute
   - fontforge
   - unzip
+  - powerline-fonts
 
 aur_packages: []
