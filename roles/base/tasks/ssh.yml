@@ -12,3 +12,4 @@
     path: "/{{ user.home }}/.ssh/id_ssh_rsa"
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
+    state: present
