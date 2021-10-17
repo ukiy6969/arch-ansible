@@ -26,5 +26,6 @@ base_packages:
   - ripgrep
   - traceroute
   - fontforge
+  - unzip
 
 aur_packages: []
