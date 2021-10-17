@@ -4,7 +4,7 @@
     path: "{{ user.home }}/.ssh"
     owner: "{{ user.name }}"
     group: "{{ user.group }}"
-    mode: "600"
+    mode: "700"
     state: directory
 
 - name: Generate an OpenSSH keypair
