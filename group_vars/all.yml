@@ -25,5 +25,6 @@ base_packages:
   - python-pynvim
   - ripgrep
   - traceroute
+  - fontforge
 
 aur_packages: []
