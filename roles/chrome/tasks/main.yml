@@ -3,7 +3,6 @@
   kewlfft.aur.aur:
     name:
       - google-chrome
-      - chrome-remote-desktop
     state: present
   become: yes
   become_user: aur_builder 
