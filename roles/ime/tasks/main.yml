@@ -2,17 +2,15 @@
 - name: Install package fcitx
   pacman:
     name:
-    - 'fcitx5'
-    - 'fcitx5-mozc'
-    - 'fcitx5-configtool'
-    - 'fcitx5-gtk'
-    - 'fcitx5-qt'
+    - 'fcitx'
+    - 'fcitx-mozc'
+    - 'fcitx-configtool'
     state: present
 
 - name: Set Input Method
   blockinfile:
     dest: /etc/environment
     block: |
-      GTK_IM_MODULE="fcitx5"
-      QT_IM_MODULE="fcitx5"
-      XMODIFIERS='@im=fcitx5'
+      GTK_IM_MODULE="fcitx"
+      QT_IM_MODULE="fcitx"
+      XMODIFIERS='@im=fcitx'
