@@ -3,6 +3,7 @@
   pacman:
     name:
     - 'fcitx'
+    - 'fcitx-im'
     - 'fcitx-mozc'
     - 'fcitx-configtool'
     state: present
